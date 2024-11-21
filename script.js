@@ -9,8 +9,8 @@ togglePassword.addEventListener("click", () => {
 
   icon.src =
     type === "password"
-      ? "../images/eye-slash-solid.svg"
-      : "../images/eye-solid.svg";
+      ? "./images/eye-slash-solid.svg"
+      : "./images/eye-solid.svg";
 });
 
 let formButt = document.querySelector(".btn button");
