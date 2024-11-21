@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./style.css/style.css">
+</head>
+
+<body>
+    <!-- <div class="main-container">
+        <div class="container">
+            <div class="wraper">
+                <h3>Log in</h3>
+                <form action="#">
+                    <div class="input-group">
+                        <input type="text" name="name" id="name" required>
+                        <label for="input">Username</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="password" name="password" id="password" required>
+                        <label for="password">Password</label>
+                        <span class="password-show-icon" id="togglePassword"><img src="../images/eye-slash-solid.svg"
+                                alt=""></span>
+
+                    </div>
+
+                    <div class="check">
+                        <input type="checkbox">
+                        <span>Remember me</span>
+                        <div>
+                            <a href="#">Forgot password?</a>
+                        </div>
+                    </div>
+
+                    <div class="btn">
+                        <button type="submit">Log in</button>
+                        <div class="reg">
+                            Don't have an account? <a href="#">Sign up</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="main-container">
+        <div class="container">
+            <div class="wraper">
+                <h3>Sign Up</h3>
+                <div class="check" style=" width: 100%;">
+                    <div class="btn" style="width: 100%;">
+                        <div class="reg google" style="width: 100%;">
+                            <a style="margin: 0%; color: black;" href="index.html">Log In</a>
+                        </div>
+
+
+                        <div class="main-line-div">
+
+                            <div class="line">
+
+                            </div>
+                            <div>
+                                <span>OR</span>
+
+                            </div>
+
+                            <div class="line-2">
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <form action="#">
+                    <div class="input-group">
+                        <input type="text" name="mobile" id="mobilename" class="form-cantrol" required>
+                        <label for="input">Mobile Number or Email</label>
+                        <span class="error" id="nameError" style="color: red; font-family:Roboto;"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" name="name" id="name" class="form-cantrol" required>
+                        <label for="fullname">Full Name</label>
+                        <span class="error" id="fullnameError" style="color: red; font-family:Roboto;"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" name="username" id="username" class="form-cantrol" required>
+                        <label for="input">Username</label>
+                        <span class="error" id="usernameError" style="color: red; font-family:Roboto;"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="password" name="password" id="password" class="form-cantrol" required>
+                        <label for="password">Password</label>
+                        <span class="error" id="passwordError" style="color: red; font-family:Roboto;"></span>
+                    </div>
+
+                    <div class="btn">
+                        <button type="submit">Sign Up</button>
+                        <div class="reg" style="text-align: center;">
+                            By signing up, you agree to our <strong>Term Data Policy</strong><br> and <strong>Cookies
+                                Policy</strong> </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let formButton = document.querySelector(".btn button")
+        formButton.addEventListener("click", (e) => {
+            e.preventDefault()
+
+            const mobile = document.getElementById("mobilename").value;
+            const name = document.getElementById("name").value;
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+
+            const mobileEmailPattern = /^(?:\d{10}|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
+            const fullNamePattern = /^[a-zA-Z\s]+$/;
+            const usernamePattern = /^[a-zA-Z0-9_]{3,}$/;
+            const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+
+            // Clear previous error messages
+            let error = document.querySelectorAll(".error");
+            error.forEach((element) => {
+                element.innerText = "";
+            });
+
+            let isValid = true;
+
+            // Name validation
+            if (!mobileEmailPattern.test(mobile)) {
+                document.getElementById("nameError").innerText =
+                    "Enter a valid email or 10-digit phone number.";
+                isValid = false;
+            }
+
+            if (!fullNamePattern.test(name)) {
+                document.getElementById("fullnameError").innerText =
+                    "This field is required.";
+                isValid = false;
+            }
+
+            if (!usernamePattern.test(username)) {
+                document.getElementById("usernameError").innerText =
+                    "This field is required.";
+                isValid = false;
+            }
+
+            if (!passwordPattern.test(password)) {
+                document.getElementById("passwordError").innerText =
+                    "Create a password at least 6 characters long.";
+                isValid = false;
+            }
+
+            if (isValid) {
+                let finalValidation = document.getElementsByClassName("form-cantrol");
+                Array.from(finalValidation).forEach((el) => {
+                    el.value = "";
+                });
+
+                alert("Form submitted successfully!");
+
+            }
+
+
+        });
+
+    </script>
+
+
+    <!-- <script src="./script.js"></script> -->
+</body>
+
+</html>

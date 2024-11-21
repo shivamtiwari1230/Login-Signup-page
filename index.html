@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./style.css/style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="container">
+            <div class="wraper">
+                <h3>Log in</h3>
+                <form action="#">
+                    <div class="input-group">
+                        <input type="text" name="name" id="userName" class="form-cantrol" required>
+                        <label for="input">Username</label>
+                        <span class="error" id="usernameError" style="color: red; font-family:Roboto;"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="password" name="password" id="password" class="form-cantrol" required>
+                        <label for="password">Password</label>
+                        <span class="error" id="passwordError" style="color: red; font-family:Roboto;"></span>
+                        <span class="password-show-icon" id="togglePassword"><img src="../images/eye-slash-solid.svg"
+                                alt=""></span>
+
+                    </div>
+
+                    <div class="check">
+                        <input type="checkbox">
+                        <span>Remember me</span>
+                        <div>
+                            <a href="#">Forgot password?</a>
+                        </div>
+                    </div>
+
+                    <div class="btn">
+                        <button type="submit">Log in</button>
+                        <div class="reg">
+                            Don't have an account? <a href="./signup.html">Sign up</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
